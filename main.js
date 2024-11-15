@@ -1,41 +1,105 @@
+function scrollToTop() {
+	let bannerHeight = $('.banner').outerHeight();
+	if (window.pageYOffset>bannerHeight) {
+		document.body.scrollTop = bannerHeight; // For Safari
+		document.documentElement.scrollTop = bannerHeight; // For Chrome, Firefox, IE and Opera
+	}
+}
+
 $(document).ready(function(){
-	let toggleTS = 0;
-	
 	$('#page-home').css('display', 'block').addClass('page-current');
 	
-	$('.menu-item.dropdown').hover(
-		function(){
-			toggleTS = (new Date()).getTime();
-			$(this).find('.submenu').addClass('menu-open');
-		},
-		function(){
-			toggleTS = 0;
-			$(this).find('.submenu').removeClass('menu-open');
-		}
-	);
+	if (!$.browser.mobile) {
+		$('.menu-item.dropdown').hover(
+			function(){
+				$('.submenu').hide();
+				$('.menu-open').removeClass('menu-open');
+				$(this).find('.submenu').css('display','none').addClass('menu-open').slideDown('fast');
+			},
+			function(){
+				$(this).find('.submenu').removeClass('menu-open');
+			}
+		);
+	}
 	
 	$('.navbar .menu a').click(function(){
 		let menuID = this.id.substr(5);
 		switch(menuID) {
 			case 'cabinet':
 			case 'aide':
-				if ($('#'+this.id+' ~ .submenu').hasClass('menu-open')) {
-					if ((new Date()).getTime()-toggleTS>100) $('#'+this.id+' ~ .submenu').removeClass('menu-open');
-					else console.log('double click');
-				} else $('#'+this.id+' ~ .submenu').addClass('menu-open');
+				if ($('#'+this.id+' ~ .submenu').hasClass('menu-open')) $('#'+this.id+' ~ .submenu').removeClass('menu-open');
+				else {
+					$('.submenu').hide();
+					$('.menu-open').removeClass('menu-open');
+					$('#'+this.id+' ~ .submenu').addClass('menu-open').slideDown('fast');
+				}
 			break;
 			default:
-				$('.menu-item.dropdown .submenu.menu-open').removeClass('menu-open');
-				$('.page-current').css('display', 'none').removeClass('page-current');
-				$('#page-'+menuID).css('display', 'block').addClass('page-current');
+				$('.submenu').hide();
+				$('.menu-open').removeClass('menu-open');
+				$('.page-current').fadeOut('fast',function() {
+					$('.page-current').css('display', 'none').removeClass('page-current');
+					$('#page-'+menuID).css('display', 'block').addClass('page-current');
+					scrollToTop();
+				});
 			break;
 		}
-		toggleTS = 0;
 		return false;
 	});
 	
-	$('#link-map').click(function() {
-		$('.page-current').css('display', 'none').removeClass('page-current');
-		$('#page-map').css('display', 'block').addClass('page-current');
+	$('.link').click(function() {
+		let menuID = this.id.substr(5);
+		$('.page-current').fadeOut('fast',function() {
+			$('.page-current').css('display', 'none').removeClass('page-current');
+			$('#page-'+menuID).css('display', 'block').addClass('page-current');
+			scrollToTop();
+		});
+		return false;
 	});
+	
+	
+	const $carousel = $('.carousel');
+    const $items = $('.carousel-item');
+    const totalItems = $items.length;
+    let currentIndex = 0;
+
+    // Function to update carousel position
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        $carousel.css('transform', `translateX(${offset}%)`);
+    }
+
+    // Carousel navigation
+    $('.next-btn').click(function() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    });
+
+    $('.prev-btn').click(function() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+    });
+
+    // Modal functionality
+    const $modal = $('#imageModal');
+    const $modalImage = $('#modalImage');
+
+    // Show modal on image click
+    $('.carousel-item img').click(function() {
+        const src = $(this).attr('src');
+        $modalImage.attr('src', src);
+        $modal.fadeIn();
+    });
+
+    // Close modal
+    $('.close').click(function() {
+        $modal.fadeOut();
+    });
+
+    // Close modal on outside click
+    $modal.click(function(e) {
+        if (e.target === $modal[0]) {
+            $modal.fadeOut();
+        }
+    });
 });

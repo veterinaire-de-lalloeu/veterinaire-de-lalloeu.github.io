@@ -88,6 +88,7 @@ $(document).ready(function(){
     $('.carousel-item img').click(function() {
         const src = $(this).attr('src');
         $modalImage.attr('src', src);
+	$modal.css('display','flex');
         $modal.fadeIn();
     });
 

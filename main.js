@@ -57,50 +57,73 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	
-	const $carousel = $('.carousel');
-    const $items = $('.carousel-item');
-    const totalItems = $items.length;
-    let currentIndex = 0;
+	$('#page-photos').load('photos.html #container', function() {
+		const $carousel = $('.carousel');
+		const $items = $('.carousel-item');
+		const totalItems = $items.length;
+		let currentIndex = 0;
 
-    // Function to update carousel position
-    function updateCarousel() {
-        const offset = -currentIndex * 100;
-        $carousel.css('transform', `translateX(${offset}%)`);
-    }
+		// Function to update carousel position
+		function updateCarousel() {
+			const offset = -currentIndex * 100;
+			$carousel.css('transform', `translateX(${offset}%)`);
+		}
 
-    // Carousel navigation
-    $('.next-btn').click(function() {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
-    });
+		// Carousel navigation
+		$('.next-btn').click(function() {
+			currentIndex = (currentIndex + 1) % totalItems;
+			updateCarousel();
+		});
 
-    $('.prev-btn').click(function() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        updateCarousel();
-    });
+		$('.prev-btn').click(function() {
+			currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+			updateCarousel();
+		});
 
-    // Modal functionality
-    const $modal = $('#imageModal');
-    const $modalImage = $('#modalImage');
+		// Modal functionality
+		const $modal = $('#imageModal');
+		const $modalImage = $('#modalImage');
 
-    // Show modal on image click
-    $('.carousel-item img').click(function() {
-        const src = $(this).attr('src');
-        $modalImage.attr('src', src);
-	$modal.css('display','flex');
-        $modal.fadeIn();
-    });
+		// Show modal on image click
+		$('.carousel-item img').click(function() {
+			const src = $(this).attr('src');
+			$modalImage.attr('src', src);
+			$modal.css('display','flex');
+			$modal.fadeIn();
+		});
 
-    // Close modal
-    $('.close').click(function() {
-        $modal.fadeOut();
-    });
+		// Close modal
+		$('.close').click(function() {
+			$modal.fadeOut();
+		});
 
-    // Close modal on outside click
-    $modal.click(function(e) {
-        if (e.target === $modal[0]) {
-            $modal.fadeOut();
-        }
-    });
+		// Close modal on outside click
+		$modal.click(function(e) {
+			if (e.target === $modal[0]) {
+				$modal.fadeOut();
+			}
+		});
+	});
+	$('#page-team').load('team.html #container');
+	$('#page-services').load('services.html #container');
+	$('#page-liens').load('liens.html #container');
+	$('#page-conseils').load('conseils.html #container',function() {
+		$('#page-conseils a').click(function() {
+			if (this.href.indexOf('#')<0) /*$('#page-content').html('contenu distant: '+this.href);*/ $('#page-content').load(this.href);
+			else {
+				if ($('#'+this.id+' ~ ul:first').hasClass('menu-current')) $('#'+this.id+' ~ ul').removeClass('menu-current');
+				else {
+					$('.menu-current').removeClass('menu-current');
+					console.log(this.id);
+					console.log(this.id.substr(0,this.id.lastIndexOf('-')));
+					$('#'+this.id.substr(0,this.id.lastIndexOf('-'))+' ~ ul').addClass('menu-current');
+					$('#'+this.id+' ~ ul').addClass('menu-current');
+				}
+			}
+			return false;
+		});
+	});
+	$('#page-legal').load('legal.html #container');
+	$('#page-horaires').load('horaires.html #container');
+	$('#page-urgences').load('urgences.html #container');
 });

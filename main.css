@@ -6,7 +6,7 @@ body {
 
 @media screen and (min-width: 1520px) {
   body {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("https://i.imgur.com/lIWtl6n.png");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/lIWtl6n.png");
 	background-position: top center;
 	background-attachment: fixed;
 	background-size: 2640px;
@@ -14,10 +14,10 @@ body {
 	background-color: #080808 !important;
   }
   body.blue {
-	background-image: linear-gradient(rgba(13, 27, 42, 0.4), rgba(0, 0, 0, 0.8)), url("https://i.imgur.com/lIWtl6n.png");
+	background-image: linear-gradient(rgba(13, 27, 42, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/lIWtl6n.png");
   }
   body.purple {
-	background-image: linear-gradient(rgba(35, 25, 66, 0.4), rgba(0, 0, 0, 0.8)), url("https://i.imgur.com/lIWtl6n.png");
+	background-image: linear-gradient(rgba(35, 25, 66, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/lIWtl6n.png");
   }
 }
 

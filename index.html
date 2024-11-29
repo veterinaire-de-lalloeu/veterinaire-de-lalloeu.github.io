@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="main.css">
   <script src="resources/jquery-min.js"></script>
   <script src="main.js"></script>
+  <script src="conseils.js"></script>
   <script src="detectmobile.js"></script>
   <title>Cabinet Vétérinaire de l'Allœu</title>
 </head>
@@ -28,10 +29,11 @@
   <header>
     <nav class="navbar">
       <ul class="menu">
-        <li class="menu-item"><a href="#" id="menu-home"><img src="https://i.imgur.com/Or151Xw.png" alt="Home"></a></li>
+        <li class="menu-item pc"><a href="#" id="menu-home"><img src="https://i.imgur.com/Or151Xw.png" alt="Home"></a></li>
         <li class="menu-item dropdown">
           <a href="#" id="menu-cabinet">Le cabinet</a>
           <ul class="submenu" id="submenu-cabinet">
+			<li><a href="#" id="menu-home" class="mobile">Accueil</a></li>
 			<li><a href="#" id="menu-horaires" class="mobile">Nos horaires</a></li>
 			<li><a href="#" id="menu-map" class="mobile">Nous situer</a></li>
 		    <li><a href="#" id="menu-team">Notre équipe</a></li>
@@ -134,101 +136,26 @@
 		<!-- HOME -->
 		<div class="page" id="page-home">
 			<h2>Bienvenue au Cabinet Vétérinaire de&nbsp;l'Allœu</h2>
+			<p class="splash bc1">
+				<img src="https://i.imgur.com/JvzagZo.png" alt="Cabinet Vétérinaire de l'Allœu">
+			</p>
 			<p>Notre cabinet est neuf et facile d'accès (parking privé, accès pour les personnes à mobilité réduite), nos services comprennent consultations, vaccinations, chirurgies, analyses sanguines (hématologie, biochimie et dosage hormonal), radios et échographies, dentisterie, alimentation, hygiène...</p>
-			<p class="mobile">mobile content</p>
 		</div>
 		
 		<!-- HORAIRES (non-wide devices) -->
-		<div class="page" id="page-horaires">
-			<h2>Nos horaires</h2>
-			<table>
-				<tr><th class="b0 c1 bb1" scope="row">Lundi</th><td>9h00 - 12h00</td><td>13h30 - 19h00</td></tr>
-				<tr><th class="b0 c1 bb1" scope="row">Mardi</th><td class="b2 c1">9h00 - 12h00</td><td class="b2 c1">13h30 - 19h00</td></tr>
-				<tr><th class="b0 c1 bb1" scope="row">Mercredi</th><td>9h00 - 12h00</td><td>13h30 - 15h30</td></tr>
-				<tr><th class="b0 c1 bb1" scope="row">Jeudi</th><td class="b2 c1">9h00 - 12h00</td><td class="b2 c1">13h30 - 19h00</td></tr>
-				<tr><th class="b0 c1 bb1" scope="row">Vendredi</th><td>9h00 - 12h00</td><td>13h30 - 19h00</td></tr>
-				<tr><th class="b0 c1" scope="row">Samedi</th><td class="b2 c1">9h00 - 12h00</td><td class="b2 c1">&nbsp;</td></tr>
-			</table>
-			<hr>
-			<b>Uniquement sur rendez-vous</b>
-		</div>
+		<div class="page" id="page-horaires"></div>
 		
 		<!-- URGENCES -->
-		<div class="page" id="page-urgences">
-			<h2>Urgences</h2>
-			<p>En cas d'urgence en dehors de nos heures d'ouverture, appelez notre numéro habituel <a href="tel:0321576255" class="ah2" target="_blank">03.21.57.62.55</a> et nous vous redirigerons vers le vétérinaire de garde avec lequel nous travaillons.</p>
-			<p>Ne vous présentez pas au cabinet sans nous avoir d'abord téléphoné, nous ne pourrons pas vous recevoir si nous sommes en chirurgie ou en visite à l'extérieur.</p>
-		</div>
+		<div class="page" id="page-urgences"></div>
 		
 		<!-- TEAM -->
-		<div class="page" id="page-team">
-			<h2>Notre équipe</h2>
-			<h3 class="flw">Les vétérinaires</h3>
-			<div class="people c0 b1">
-				<p class="c1 b0">Dr Isabelle Goffin<br>Université de Liège</p>
-				<img src="https://i.imgur.com/0l3zypZ.png" alt="Isabelle Goffin">
-			</div>
-			<div class="people c0 b1">
-				<p class="c1 b0">Dr Eline Brunin<br>Université de Liège</p>
-				<img src="https://i.imgur.com/f4VxzMK.png" alt="Eline Brunin">
-			</div>
-			<br>
-			<h3 class="flw">Les assistants</h3>
-			<div class="people c0 b1">
-				<p class="c1 b0">Anaïs</p>
-				<img src="https://i.imgur.com/We50bNu.png" alt="Anaïs Mahiez">
-			</div>
-			<div class="people c0 b1">
-				<p class="c1 b0">Clémence</p>
-				<img src="https://i.imgur.com/We50bNu.png" alt="Clémence De Temmerman">
-			</div>
-			<div class="people c0 b1">
-				<p class="c1 b0">Didier</p>
-				<img src="https://i.imgur.com/WutqAoE.png" alt="Didier Vanobbergen">
-			</div>
-		</div>
+		<div class="page" id="page-team"></div>
 		
 		<!-- SERVICES -->
-		<div class="page" id="page-services">
-			<h2>Nos services</h2>
-			<p>
-				Nous vous proposons parmi nos services&nbsp;:<br>
-				Médecine et chirurgie des animaux de compagnie, hospitalisation, échographie, radiographie, analyses, diététique, conseils, soins des animaux de basse-cour, équins, ovins, caprins,...
-			</p>
-			<div class="box">
-				<h3 class="c1 b0">Laboratoire d'analyses sanguines</h3>
-				<img src="https://i.imgur.com/vX5xwdK.jpeg" alt="Laboratoire">
-				<span class="descr c1">bla bla bla<br>je ne dis jamais bla bla bla</span>
-			</div>
-			<div class="box">
-				<h3 class="c1 b0">Echographie et Radiographie</h3>
-				<img src="https://i.imgur.com/akjonBw.jpeg" alt="Echo et Radio">
-			</div>
-			<div class="box">
-				<h3 class="c1 b0">Salle de préparation et de chirurgie</h3>
-				<img src="https://i.imgur.com/us2eRdS.jpeg" alt="Chirurgie">
-			</div>
-		</div>
+		<div class="page" id="page-services"><a href="services.html">Nos Services</a></div>
 		
 		<!-- PHOTOS -->
-		<div class="page" id="page-photos">
-			<h2>Photos</h2>
-			<div class="carousel-container">
-				<button class="prev-btn">&lt;</button>
-				<div class="carousel">
-					<div class="carousel-item"><img src="https://i.imgur.com/XDDrsMd.png" alt="Image 1"></div>
-					<div class="carousel-item"><img src="https://i.imgur.com/zXTOStv.png" alt="Image 2"></div>
-					<div class="carousel-item"><img src="https://i.imgur.com/JvzagZo.png" alt="Image 3"></div>
-					<div class="carousel-item"><img src="https://i.imgur.com/8JufalH.png" alt="Image 4"></div>
-					<div class="carousel-item"><img src="https://i.imgur.com/NVKiInG.png" alt="Image 5"></div>
-				</div>
-				<button class="next-btn">&gt;</button>
-			</div>
-			<div class="modal" id="imageModal">
-				<span class="close">&times;</span>
-				<img class="modal-content" id="modalImage" alt="Full-size Image">
-			</div>
-		</div>
+		<div class="page" id="page-photos"><a href="photos.html">Photos</a></div>
 		
 		<!-- MAP -->
 		<div class="page" id="page-map">
@@ -238,72 +165,13 @@
 		</div>
 		
 		<!-- LINKS -->
-		<div class="page" id="page-liens">
-			<h2>Liens utiles</h2>
-			<ul>
-				<li><a href="https://www.centre-antipoison-animal.com" target="_blank">Centre Antipoison Animal et Environnemental</a></li>
-				<li><a href="https://www.la-spa.fr" target="_blank">Société Protectrice des Animaux (SPA)</a></li>
-				<li><a href="https://www.centrale-canine.fr" target="_blank">Société Centrale Canine</a></li>
-				<li><a href="https://www.fff-asso.fr" target="_blank">Fédération Féline Française</a></li>
-				<li><a href="https://www.chronovet.fr" target="_blank">Chronovet (boutique vétérinaire en ligne)</a></li>
-			</ul>
-		</div>
+		<div class="page" id="page-liens"><a href="liens.html">Liens utiles</a></div>
 		
 		<!-- CONSEILS -->
-		<div class="page" id="page-conseils">
-			<h2>Conseils</h2>
-			<iframe title="Conseils" src="conseils.html"></iframe>
-		</div>
+		<div class="page" id="page-conseils"><a href="conseils.html">Conseils</a></div>
 		
 		<!-- LEGAL -->
-		<div class="page" id="page-legal">
-			<h2>Mentions légales</h2>
-			<p>
-				Ci-après dénomée <b>La structure vétérinaire</b>&nbsp:<br>
-				<br>
-				<i>
-					Cabinet Vétérinaire de l'Alloeu<br>
-					92 rue du Hem<br>
-					62840 Laventie
-				</i>
-			</p>
-			<p>
-				<h3>1) Conditions d'utilisation</h3>
-				L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété 
-				intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les 
-				représentations iconographiques et photographiques.<br>
-				<br>
-				Le contenu est, sauf mention contraire, la propriété de&nbsp;: La structure vétérinaire.<br>
-				<br>
-				La reproduction de tout ou partie de ce site, sous quelques formes que ce soit est interdite sans autorisation de la structure vétérinaire.<br>
-			</p>
-			<p>
-				<h3>2) Protection des données personnelles</h3>
-				Vous disposez d'un droit d'accès, de modification et de suppression des données qui vous concernent (Loi du 6 janvier 1978 Informatique et liberté).
-				Vous pouvez donc consulter ou modifier vos données personnelles sur demande écrite.
-			</p>
-			<p>
-				<h3>3) Réalisation</h3>
-				Ce site Web a été réalisé  par&nbsp;:
-				<address>
-					<a href="mailto:info@veterinaires-de-lalloeu.fr" target="_blank">SELARL Vétérinaires GOFFIN et Associés</a><br>
-					92 rue du Hem<br>
-					62840 Laventie<br>
-					Tél&nbsp;: <a href="tel:0321576255" target="_blank">03.21.57.62.55</a><br>
-					Siret&nbsp;: 808 579 635 00018
-				</address>
-			</p>
-			<p>
-				<h3>4) Hébergement</h3>
-				Ce site Web est hébergé par la société&nbsp;: <a href="https://github.com/" target="_blank">GitHub</a>
-			</p>
-			<p>
-				<h3>5) Liens vers les sites de tierce-parties</h3>
-				Ce site web contient des liens vers d'autres sites. L'accès à un site lié à notre site se fait aux risques et 
-				périls du visiteur ou de l'utilisateur la structure vétérinaire ne saurait être tenus pour responsables des dommages, erreurs ou 
-				omissions présents sur ces sites.
-			</p>
-		</div>
+		<div class="page" id="page-legal"><a href="legal.html">Mentions légales</a></div>
 		
 		<!-- CONFIDENTIALITE -->
 		<div class="page" id="page-confidentialite">
@@ -313,7 +181,7 @@
 	</div>
   </div>
   
-  <footer>
+  <footer class="c1">
 	<div class="container content">
 		<span>©&nbsp;Vétérinaire de l'Allœu (2024)</span>
 		<span><a href="#" class="link" id="link-legal">Mentions légales</a></span>

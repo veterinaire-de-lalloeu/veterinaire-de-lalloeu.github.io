@@ -639,7 +639,7 @@ button:focus {
   }
 }
 
-@media screen and (min-height: 1024px) {
+@media screen and (min-height: 1024px) and (min-width: 1920px) {
   body {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/Bt6wtWs.jpeg");
 	background-position: center;

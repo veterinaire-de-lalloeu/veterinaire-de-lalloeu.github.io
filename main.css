@@ -4,23 +4,6 @@ body {
   
 }
 
-@media screen and (min-width: 1520px) {
-  body {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/lIWtl6n.png");
-	background-position: top center;
-	background-attachment: fixed;
-	background-size: 2640px;
-	background-repeat: no-repeat;
-	background-color: #080808 !important;
-  }
-  body.blue {
-	background-image: linear-gradient(rgba(13, 27, 42, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/lIWtl6n.png");
-  }
-  body.purple {
-	background-image: linear-gradient(rgba(35, 25, 66, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/lIWtl6n.png");
-  }
-}
-
 a {
 	color: inherit;
 }
@@ -637,4 +620,46 @@ button:focus {
 	.people {
 		font-size: 0.8em;
 	}
+}
+
+@media screen and (min-width: 1520px) {
+  body {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/lIWtl6n.png");
+	background-position: center;
+	background-attachment: fixed;
+	background-size: 2640px;
+	background-repeat: no-repeat;
+	background-color: #080808 !important;
+  }
+  body.blue {
+	background-image: linear-gradient(rgba(13, 27, 42, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/lIWtl6n.png");
+  }
+  body.purple {
+	background-image: linear-gradient(rgba(35, 25, 66, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/lIWtl6n.png");
+  }
+}
+
+@media screen and (min-height: 1024px) {
+  body {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/Bt6wtWs.jpeg");
+	background-position: center;
+	background-size: 3848px;
+	background-repeat: no-repeat;
+	background-color: #080808 !important;
+  }
+  body.blue {
+	background-image: linear-gradient(rgba(13, 27, 42, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/Bt6wtWs.jpeg");
+  }
+  body.purple {
+	background-image: linear-gradient(rgba(35, 25, 66, 0.4), rgba(0, 0, 0, 1)), url("https://i.imgur.com/Bt6wtWs.jpeg");
+  }
+  .banner-content h1 {
+	font-size: 4vmin;
+  }
+  .box .box-content, .box h2, .box h3 {
+    padding: 0.3vw;
+  }
+  button {
+	size: 1.5vw;
+  }
 }

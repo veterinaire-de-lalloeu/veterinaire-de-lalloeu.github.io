@@ -660,6 +660,6 @@ button:focus {
     padding: 0.3vw;
   }
   button {
-	size: 1.5vw;
+    font-size: 1.5vw;
   }
 }

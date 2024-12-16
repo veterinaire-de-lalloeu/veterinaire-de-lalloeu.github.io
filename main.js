@@ -117,8 +117,9 @@ $(document).ready(function(){
 	$('#page-services').load('services.html #container');
 	$('#page-liens').load('liens.html #container');
 	$('#page-conseils').load('conseils.html #container',function() {
+		/*
 		$('#page-conseils a').click(function() {
-			if (this.href.indexOf('#')<0) /*$('#page-content').html('contenu distant: '+this.href);*/ $('#page-content').load(this.href);
+			if (this.href.indexOf('#')<0) $('#page-content').load(this.href);
 			else {
 				if ($('#'+this.id+' ~ ul:first').hasClass('menu-current')) $('#'+this.id+' ~ ul').removeClass('menu-current');
 				else {
@@ -131,6 +132,7 @@ $(document).ready(function(){
 			}
 			return false;
 		});
+		*/
 	});
 	$('#page-legal').load('legal.html #container');
 	$('#page-horaires').load('horaires.html #container');

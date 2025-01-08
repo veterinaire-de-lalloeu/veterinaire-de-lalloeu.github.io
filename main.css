@@ -244,11 +244,11 @@ footer .content span.last {
 }
 
 #menu-cabinet::before, #menu-aide::before  {
-	content: "▹"
+	content: "▹ "
 }
 
 .menu-item:has(.menu-open) #menu-cabinet::before, .menu-item:has(.menu-open) #menu-aide::before {
-	content: "▿";
+	content: "▿ ";
 }
 
 /* Sticky behavior for the navbar */

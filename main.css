@@ -243,6 +243,14 @@ footer .content span.last {
 	display:block !important;
 }
 
+#menu-cabinet::before, #menu-aide::before  {
+	content: "▹"
+}
+
+.menu-item:has(.menu-open) #menu-cabinet::before, .menu-item:has(.menu-open) #menu-aide::before {
+	content: "▿";
+}
+
 /* Sticky behavior for the navbar */
 .navbar {
   font-size: 1.5em;

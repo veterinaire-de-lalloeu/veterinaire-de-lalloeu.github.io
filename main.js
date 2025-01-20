@@ -68,7 +68,7 @@ $(document).ready(function(){
 	
 	$('#page-photos').load('photos.html #container', function() {
 		const $carousel = $('.carousel');
-		const $items = $('.carousel-item');
+		const $items = $('.carousel-item img');
 		const totalItems = $items.length;
 		let currentIndex = 0;
 
@@ -88,6 +88,27 @@ $(document).ready(function(){
 			currentIndex = (currentIndex - 1 + totalItems) % totalItems;
 			updateCarousel();
 		});
+
+		// Touch swipe handling
+            let startX = 0;
+            let endX = 0;
+
+            $('.carousel').on('touchstart', function(e) {
+                startX = e.originalEvent.touches[0].clientX;
+            });
+
+            $('.carousel').on('touchmove', function(e) {
+                endX = e.originalEvent.touches[0].clientX;
+            });
+
+            $('.carousel').on('touchend', function() {
+                if (startX - endX > 50 && currentIndex < totalItems - 1) {
+                    currentIndex++;
+                } else if (endX - startX > 50 && currentIndex > 0) {
+                    currentIndex--;
+                }
+                updateCarousel();
+            });
 
 		// Modal functionality
 		const $modal = $('#imageModal');

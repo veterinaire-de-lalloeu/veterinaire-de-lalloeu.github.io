@@ -7,10 +7,19 @@ function scrollToTop() {
 }
 
 $(document).ready(function(){
-	$('#menu-home').css('content-visibility','hidden');
-	$('.submenu #menu-home').css('content-visibility','hidden');
-	$('#page-home').css('display', 'block').addClass('page-current');
-	
+	window.addEventListener('popstate', (event) => {
+		$('.page-current').css('display', 'none').removeClass('page-current');
+		$('#page-'+((typeof event?.state?.page==='undefined')?'home':event.state.page)).css('display', 'block').addClass('page-current');
+	});
+	var originalMenu = window.location.href.indexOf('?page=');
+	originalMenu = originalMenu<0?'home':window.location.href.substr(originalMenu+6);
+	if ('home,horaires,urgences,team,services,photos,map,liens,conseils,legal,confidentialite'.indexOf(originalMenu)<0) {
+		console.log('page not found');
+		originalMenu = '404';
+	}
+	if (originalMenu==='home') $('#menu-home').css('content-visibility','hidden');
+	$('#page-'+originalMenu).css('display', 'block').addClass('page-current');
+
 	if (!$.browser.mobile) {
 		$('.menu-item.dropdown').hover(
 			function(){
@@ -40,6 +49,7 @@ $(document).ready(function(){
 				$('.submenu').hide();
 				$('.menu-open').removeClass('menu-open');
 				$('.page-current').fadeOut('fast',function() {
+					history.pushState({ page: menuID }, menuID, '?page='+menuID);
 					$('.page-current').css('display', 'none').removeClass('page-current');
 					$('#page-'+menuID).css('display', 'block').addClass('page-current');
 					scrollToTop();
@@ -59,6 +69,7 @@ $(document).ready(function(){
 	$('.link').click(function() {
 		let menuID = this.id.substr(5);
 		$('.page-current').fadeOut('fast',function() {
+			history.pushState({ page: menuID }, menuID, '?page='+menuID);
 			$('.page-current').css('display', 'none').removeClass('page-current');
 			$('#page-'+menuID).css('display', 'block').addClass('page-current');
 			scrollToTop();

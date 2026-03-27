@@ -405,8 +405,10 @@ li li {
 	color: red;
 	padding: 1.5em;
 	line-height: 1.5em;
-	float: left;
-	margin-left: 25%;
+	margin-top: 1.5em;
+	margin-left: 8%;
+	width:75%;
+	text-align:center;
 	border: solid red 2px;
 }
 

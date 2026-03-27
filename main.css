@@ -401,6 +401,10 @@ li li {
     align-items: center;
 }
 
+.warning {
+	color: red;
+}
+
 .box:hover .descr {
 	background-color: rgba(0, 0, 0, 0.6);
 }

@@ -403,6 +403,8 @@ li li {
 
 .warning {
 	color: red;
+	padding: 1.5em 0;
+	line-height: 1.5em;
 }
 
 .box:hover .descr {
